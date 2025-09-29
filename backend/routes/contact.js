@@ -27,7 +27,7 @@ const createTransporter = () => {
   });
 };
 
-// Submit contact message (public endpoint)
+// Submit contact message (public endpoint - no authentication required)
 router.post('/', async (req, res, next) => {
   try {
     const { error, value } = contactSchema.validate(req.body);
