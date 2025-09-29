@@ -1,5 +1,5 @@
 // API service for connecting frontend to backend
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://office-flow.onrender.com/api';
 
 interface ApiResponse<T = any> {
   success: boolean;
