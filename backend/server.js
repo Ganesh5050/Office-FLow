@@ -25,6 +25,11 @@ import { notFound } from './middleware/notFound.js';
 // Load environment variables
 dotenv.config();
 
+// Add startup logging
+console.log('🚀 Starting server...');
+console.log('📦 Environment:', process.env.NODE_ENV);
+console.log('🔧 Port:', process.env.PORT || 3001);
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -115,10 +120,12 @@ const PORT = process.env.PORT || 3001;
 app.set('port', PORT);
 
 server.listen(PORT, '0.0.0.0', () => {
+  console.log(`✅ Server successfully started!`);
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📊 Health check: http://0.0.0.0:${PORT}/health`);
   console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`🔗 Server bound to: 0.0.0.0:${PORT}`);
+  console.log(`🎯 Ready to accept connections!`);
 });
 
 export { io };
