@@ -54,6 +54,7 @@ router.post('/', async (req, res, next) => {
     if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
       try {
         const transporter = createTransporter();
+        transporter.setTimeout(5000); // 5 second timeout
 
         const mailOptions = {
           from: process.env.SMTP_USER,
@@ -75,7 +76,7 @@ router.post('/', async (req, res, next) => {
         console.log('Contact message email sent successfully');
       } catch (emailError) {
         console.error('Failed to send contact message email:', emailError);
-        // Don't fail the request if email fails
+        // Don't fail the request if email fails - continue with success response
       }
     }
 
