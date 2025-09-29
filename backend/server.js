@@ -126,6 +126,7 @@ server.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📊 Health check: http://0.0.0.0:${PORT}/health`);
   console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🔗 Server bound to: 0.0.0.0:${PORT}`);
   console.log(`🎯 Ready to accept connections!`);
 });
 
