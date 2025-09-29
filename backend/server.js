@@ -119,12 +119,11 @@ const PORT = process.env.PORT || 3001;
 // Add this line to ensure proper binding
 app.set('port', PORT);
 
-server.listen(PORT, '0.0.0.0', () => {
+server.listen(PORT, () => {
   console.log(`✅ Server successfully started!`);
   console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📊 Health check: http://0.0.0.0:${PORT}/health`);
+  console.log(`📊 Health check: http://localhost:${PORT}/health`);
   console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`🔗 Server bound to: 0.0.0.0:${PORT}`);
   console.log(`🎯 Ready to accept connections!`);
 });
 
